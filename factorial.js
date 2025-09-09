@@ -8,8 +8,8 @@ const rl = readline.createInterface({
 
 
 function mainMenu(){
-     console.log("-------------------------");
-   console.log("1.Say Hello ");
+   console.log("-------------------------");
+   console.log("1. Say Hello ");
    console.log("2. Factorial");
    console.log("3. Exit Application");
    console.log("-------------------------");
@@ -29,6 +29,7 @@ rl.question("Enter your Choice (1-3): ", choice =>{
     }
 })
 }
+
 function sayHello(){
      console.log("Hello");
 }
@@ -55,5 +56,28 @@ function computeFactorial(){
 
 function exitProgram(){
         console.log("Exiting Application");
+        rl.close();
+        console.clear();
 }
+
+function backToMenu(){
+   console.log("-------------------------");
+   console.log("1. Back To Menu ");
+   console.log("2. Exit ");
+
+   rl.question("What would you like to do next? (1-2) ", (backToMenuChoice)=>{
+
+
+    if(backToMenuChoice==="1"){
+        console.clear();
+        mainMenu();
+    }else if (backToMenuChoice==="2"){
+        exitProgram();
+    }else {
+        console.log("Invalid choice. Please Try Again!");
+        backToMenu;
+    }
+   })
+}
+
 mainMenu();
