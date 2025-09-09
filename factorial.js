@@ -18,13 +18,13 @@ rl.question("Enter your Choice (1-3): ", choice =>{
     console.log(choice);
 
     if (choice === "1"){
-       sayHello;
+       sayHello();
        
     } else if (choice === "2"){
-        computeFactorial;
+        computeFactorial();
 
     } else if (choice === "3"){
-       exitProgram;
+       exitProgram();
     } else {
         console.log("Invalid Choice. Please Try Again");
     }
@@ -33,6 +33,7 @@ rl.question("Enter your Choice (1-3): ", choice =>{
 
 function sayHello(){
      console.log("Hello");
+     backToMenu();
 }
 
 function computeFactorial(){
@@ -43,6 +44,7 @@ function computeFactorial(){
 
             if (isNaN(num) || num < 0){
                 console.log("Please enter a non-negative integer");
+                backToMenu();
             } else {
                 let fact = 1;
 
@@ -51,6 +53,7 @@ function computeFactorial(){
                 }
 
                 console.log("The factorial of" + num + " is " + fact);
+                backToMenu();
             }
         })
 }
@@ -76,7 +79,7 @@ function backToMenu(){
         exitProgram();
     }else {
         console.log("Invalid choice. Please Try Again!");
-        backToMenu;
+        mainMenu();
     }
    })
 }
