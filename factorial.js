@@ -5,20 +5,36 @@ const rl = readline.createInterface({
     input:process.stdin,
     output:process.stdout
 })
+
+
 function mainMenu(){
-console.log("-------------------------");
-console.log("1. ");
-console.log("2. Factorial");
-console.log("3. Exit Application");
-console.log("-------------------------");
+     console.log("-------------------------");
+   console.log("1.Say Hello ");
+   console.log("2. Factorial");
+   console.log("3. Exit Application");
+   console.log("-------------------------");
 
 rl.question("Enter your Choice (1-3): ", choice =>{
     console.log(choice);
 
     if (choice === "1"){
-        console.log("Hello");
+       sayHello;
     } else if (choice === "2"){
-        console.log("Factorial");
+        computeFactorial;
+
+    } else if (choice === "3"){
+       exitProgram;
+    } else {
+        console.log("Invalid Choice. Please Try Again");
+    }
+})
+}
+function sayHello(){
+     console.log("Hello");
+}
+
+function computeFactorial(){
+         console.log("Factorial");
 
         rl.question("Please enter a number for factorial: ", numStr =>{
             let num = parseInt(numStr);
@@ -35,14 +51,9 @@ rl.question("Enter your Choice (1-3): ", choice =>{
                 console.log("The factorial of" + num + " is " + fact);
             }
         })
-
-    } else if (choice === "3"){
-        console.log("Exiting Application");
-    } else {
-        console.log("Invalid Choice. Please Try Again");
-    }
-})
-
 }
 
+function exitProgram(){
+        console.log("Exiting Application");
+}
 mainMenu();
