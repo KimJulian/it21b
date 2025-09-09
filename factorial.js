@@ -19,6 +19,7 @@ rl.question("Enter your Choice (1-3): ", choice =>{
 
     if (choice === "1"){
        sayHello;
+       
     } else if (choice === "2"){
         computeFactorial;
 
