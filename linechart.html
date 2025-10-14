@@ -22,8 +22,8 @@
             this.dataUrl = dataUrl;
             this.chart = null;
         }
-    }
-    renderChart(data) ;{
+
+        renderChart(data);{
         const ctx = document.getElementById(this.canvasId).getContext("2d");
         //
         this.chart = new Chart(ctx, {
@@ -49,7 +49,7 @@
     }
     
 
-    async fetchData();{
+    async fetchData(); {
         try {
             const response = await fetch(this.dataUrl);
 
@@ -64,17 +64,18 @@
         }
     
 
-    async init();{
-        const data = await this.fetchData();
-        if(data){
-            this.renderChart(data);
+    async init(); {
+            const data = await this.fetchData();
+            if (data) {
+                this.renderChart(data);
+            }
         }
     }
-}
 
-document.addEventListener("DOMContentLoaded", () =>{
-    const chart = new Linechart("linechart",)
-})
+    document.addEventListener("DOMContentLoaded", () => {
+        const chart = new Linechart("linechart",)
+    })
+}
 </script>
 
 </html>
