@@ -68,7 +68,10 @@
             if(data) this.renderChart(data);
         }
     }
-
+    document.addEventListener("DOMContentLoaded", ()=>{
+        const chart = new radarChart("radarChart","radarData.json");
+        chart.init();
+    });
 </script>
 
 </html>
