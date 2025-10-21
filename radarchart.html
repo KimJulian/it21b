@@ -48,6 +48,18 @@
                 }
             });
         }
+       async fetchData(){
+        try{
+            const response = await fetch(this.dataUrl);
+            if(!response.ok) throw new Error(`failed to load data: ${response.statusText}`);
+
+            const data = await response.json();
+            return data;
+        }catch (error){
+            console.error("error fetching data: ", error);
+            return null;
+        }
+       }
     }
     
 </script>
