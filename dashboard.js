@@ -54,3 +54,9 @@ class LineChart {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const chart = new LineChart("lineChart", "linedata.json");
+    chart.init();
+});
+
